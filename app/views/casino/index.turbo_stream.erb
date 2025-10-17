@@ -1,0 +1,11 @@
+<%= turbo_stream.replace "casino-content" do %>
+  <%= turbo_frame_tag "casino-content" do %>
+    <%= render partial: "casino_content" %>
+  <% end %>
+<% end %>
+
+<%= turbo_stream.replace "funds-amount" do %>
+  <%= turbo_frame_tag "funds-amount" do %>
+    <%= @funds %>
+  <% end %>
+<% end %>
