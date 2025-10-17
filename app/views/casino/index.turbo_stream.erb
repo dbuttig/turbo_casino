@@ -4,6 +4,12 @@
   <% end %>
 <% end %>
 
+<%= turbo_stream.replace "instructions-content" do %>
+  <%= turbo_frame_tag "instructions-content" do %>
+    <%= render partial: "instructions_content" %>
+  <% end %>
+<% end %>
+
 <%= turbo_stream.replace "funds-amount" do %>
   <%= turbo_frame_tag "funds-amount" do %>
     <%= @funds %>

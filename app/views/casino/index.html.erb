@@ -1,9 +1,13 @@
 <body class="bg-gray-900 text-white min-h-screen flex flex-col">
   <%= render "casino/navbar" %>
 
-  <main class="flex-1 p-6">
-    <turbo-frame id="casino-content">
-      <p class="text-gray-400">Welcome to Covid Casino!</p>
-    </turbo-frame>
-  </main>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <turbo-frame id="casino-content" class="bg-gray-800 rounded-2xl p-4 shadow">
+        <%= render "casino_content" %>
+      </turbo-frame>
+
+      <turbo-frame id="instructions-content" class="bg-gray-800 rounded-2xl p-4 shadow">
+        <%= render "instructions_content" %>
+      </turbo-frame>
+    </div>
 </body>
