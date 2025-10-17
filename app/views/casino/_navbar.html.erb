@@ -1,0 +1,10 @@
+<nav class="border-b border-white/10 bg-gray-800">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
+    <div class="flex items-center space-x-4">
+        <a href="<%= casino_path %>" data-turbo-frame="casino-content" class="text-gray-400 hover:text-white">Welcome</a>
+    </div>
+
+    <div>
+      💰 <span id="funds-amount"><%= session[:funds] = 0 %></span>
+    </div>
+  </div>
