@@ -9,7 +9,13 @@
     <p class="text-yellow-400 font-semibold"><%= @message %></p>
 
     <%= form_with url: spin_slots_path, method: :post, data: { turbo_frame: "casino-content" } do %>
-      <button type="submit" class="px-4 py-2 bg-green-500 hover:bg-green-700 text-white font-bold rounded">
+      <% out_of_credits = @funds.to_i <= 0 %>
+
+      <button
+        type="submit"
+        class="px-4 py-2 font-bold rounded text-white
+              <%= out_of_credits ? 'bg-gray-500 cursor-not-allowed' : 'bg-green-500 hover:bg-green-700' %>"
+        <%= 'disabled' if out_of_credits %>>
         Spin!
       </button>
     <% end %>
@@ -17,19 +23,4 @@
 </turbo-frame>
 
 <turbo-frame id="instructions-content">
-  <div class="text-center space-y-4">
-    <h1 class="text-3xl font-bold">Slot Machine</h1>
-
-    <div class="text-5xl font-mono">
-      <%= @slots.join(" ") %>
-    </div>
-
-    <p class="text-yellow-400 font-semibold"><%= @message %></p>
-
-    <%= form_with url: spin_slots_path, method: :post, data: { turbo_frame: "casino-content" } do %>
-      <button type="submit" class="px-4 py-2 bg-green-500 hover:bg-green-700 text-white font-bold rounded">
-        Spin!
-      </button>
-    <% end %>
-  </div>
 </turbo-frame>
