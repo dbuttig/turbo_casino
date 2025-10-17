@@ -1,0 +1,27 @@
+<%= turbo_stream.replace "casino-content" do %>
+  <%= turbo_frame_tag "casino-content" do %>
+    <div class="text-center space-y-4">
+      <h1 class="text-3xl font-bold">Casino Bank</h1>
+   
+      <p class="text-yellow-400 font-semibold">Player has banked <%= session[:player_bank] %></p>
+
+      <%= form_with url: cash_out_bank_path, method: :post, data: { turbo_frame: "casino-content" } do %>
+        <button type="submit" class="px-4 py-2 bg-green-500 hover:bg-green-700 text-white font-bold rounded">
+          Cash Out!
+        </button>
+      <% end %>
+
+      <%= form_with url: deposit_bank_path, method: :post, data: { turbo_frame: "casino-content" } do %>
+        <button type="submit" class="px-4 py-2 bg-green-500 hover:bg-green-700 text-white font-bold rounded">
+          Deposit
+        </button>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+
+<%= turbo_stream.replace "funds-amount" do %>
+  <%= turbo_frame_tag "funds-amount" do %>
+    <%= @funds %>
+  <% end %>
+<% end %>
