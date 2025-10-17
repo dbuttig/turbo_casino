@@ -12,9 +12,11 @@ class BanksController < ApplicationController
     @player_bank = session[:player_bank]
     
     respond_to do |format|
-      format.turbo_stream { render :show }
-      format.html { redirect_to banks_path }
-    end
+  format.turbo_stream do
+    render template: "casino/index"
+  end
+  format.html { redirect_to casino_path }
+end
   end
 
   def deposit
