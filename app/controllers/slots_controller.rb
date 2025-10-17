@@ -4,6 +4,7 @@ class SlotsController < ApplicationController
   def show
     @slots ||= ["🍋", "🍊", "🍉"]
     @message ||= "Try your luck! Cost to roll is 1 credit!"
+    @funds = session[:funds]
   end
 
   def spin
