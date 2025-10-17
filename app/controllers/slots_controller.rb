@@ -14,7 +14,19 @@ class SlotsController < ApplicationController
 
     @slots = 3.times.map { symbols.sample }
 
-    if @slots.uniq.length == 1
+    win_condition = @slots.uniq.length == 1
+
+    if win_condition && @funds > 40 && reroll(30)
+      puts "Rerolling because I cheat 30..."
+      @slots = 3.times.map { symbols.sample }
+      win_condition = @slots.uniq.length == 1
+    elsif win_condition && @funds > 60 && reroll(60)
+      puts "Rerolling because I cheat 60..."
+      @slots = 3.times.map { symbols.sample }
+      win_condition = @slots.uniq.length == 1
+    end
+
+    if win_condition
       case @slots.first
       when "🍋"
         winnings = 10
@@ -41,6 +53,11 @@ class SlotsController < ApplicationController
   end
 
   private
+
+  def reroll(chance)
+    puts "Rerolling"
+    rand(100) < chance
+  end
 
   def set_funds
     session[:funds] ||= 10
