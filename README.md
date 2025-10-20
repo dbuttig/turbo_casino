@@ -1,4 +1,6 @@
 <!-- @format -->
+### Project
+An online casino project made as part of an online assessment. Designed an online casino using Rails and Turbo.
 
 ### Objective
 
@@ -73,17 +75,3 @@ You've landed a summer gig in Las Vegas! Unfortunately, it's 2020, and the casin
       -   [slot-animation] After submitting a roll request to the server, all blocks should enter a spinning state (a spinning 'X' character for example), and then show the result of the roll.
       -   [slot-animation-advanced] After receiving a response from the server, the first block should stop spinning after 500 milliseconds and display its result, the second block should spin for another 500 milliseconds and display its result, then the third block should spin for another 500 milliseconds before displaying its result.
 
-### Evaluation Criteria
-
-- Completeness: did you complete the Core Features as defined?
-- Correctness: does the solution perform in sensible, thought-out ways?
-- Maintainability: is the code well structured, follows Ruby/Rails conventions, and architected in a way to support the future?
-- Testing: are there any logic issues or visual bugs?
-
-### Project Completion
-
-Please organize and design your code as if it were going into production. If you have questions about the project, reach out via Slack or send them via email to delynn@thereceptionist.com. When you are satisfied with your solution, push your changes to the `main` branch. After you have pushed your code, you may submit the project on the Code Submit assignment page.
-
-All the best and happy coding,
-
-The Receptionist Team
